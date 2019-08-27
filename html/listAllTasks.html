@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css.css">
+     </head>
+    <body>
+        
+        <h2>
+            <a href="/">Home</a> <br />
+            <a href="/addTask">Add task</a>
+        </h2>
+        <table>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Due date
+                </th>
+                <th>
+                    Due date
+                </th>
+            </tr>
+            <% for (let i = 0; i < db.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= db[i].name %>
+                    </td>
+                    <td>
+                        <%= db[i].due %>
+                    </td>
+                    <td>
+                        <%= db[i].desc %>
+                    </td>
+                </tr>
+            <% } %>
+                      
+    
+        </table>
+    </body>
+</html>
