@@ -22,6 +22,7 @@ mongoDBClient.connect(url, {
 });
 
 
+
 app.use(express.static('img'));
 app.use(express.static('css'));
 
@@ -65,7 +66,7 @@ app.get('/deletetask', function (req, res) {
 app.post('/deletetaskdata', function (req, res) {
     let task2del = req.body;
     console.log(task2del);
-    let filter = { "_id" : task2del._id };
+    let filter = { "_id" : mongodb.ObjectId(task2del._id) };
     col.deleteOne(filter);
     res.redirect('/listTasks');
 });
@@ -76,5 +77,17 @@ app.get('/deleteall', function (req, res) {
     res.redirect('/listTasks');
 
 });
+
+
+app.get('/updatestatus', function (req, res) {
+    res.sendFile(showView + 'updatestatus.html');
+});
+
+app.post("/updatestatustask", function (req,res){
+    let newDetail = req.body;
+    let filter = {"_id" : mongodb.ObjectId(newDetail._id)};
+    col.updateOne(filter, {$set: {status : newDetail.status}});
+    res.redirect('/listTasks');
+})
 
 app.listen(8080);

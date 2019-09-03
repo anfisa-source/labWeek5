@@ -13,7 +13,11 @@
   <body>
       <h2>
           <a href="/">Home</a> <br />
-          <a href="/listTasks">List All tasks</a>
+          <a href="/listTasks">List All tasks</a><br />
+          
+          <a href="/deletetask">Delete task</a><br />
+          <a href="/deleteall">Delete All</a><br />
+          <a href="/updatestatus">Update status</a><br />
         </h2>
     <form method="POST" action="/addNewTask">
       <label for="Name">Name:</label>
@@ -23,7 +27,11 @@
       <label for="due">Task due:</label>
       <input type="date" name="due" />
       <label for="status">Status:</label>
-      <input type="text" name="status" />
+      <select name="status">
+          <option value="Inprogress">Inprogress</option>
+          <option value="Complete">Complete</option>
+          
+        </select>
       <label for="desc">Description:</label>
       <input type="desc" name="desc" />
       <button type="submit">Submit</button>
