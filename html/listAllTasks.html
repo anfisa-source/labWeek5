@@ -11,25 +11,43 @@
         <table>
             <tr>
                 <th>
+                    TaskId
+                </th>
+                <th>
                     Name
                 </th>
                 <th>
-                    Due date
+                   Assign to
                 </th>
                 <th>
                     Due date
                 </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Description
+                </th>
             </tr>
-            <% for (let i = 0; i < db.length; i++) { %>
+            <% for (let i = 0; i < col.length; i++) { %>
                 <tr>
                     <td>
-                        <%= db[i].name %>
+                        <%= col[i]._id %>
                     </td>
                     <td>
-                        <%= db[i].due %>
+                        <%= col[i].name %>
                     </td>
                     <td>
-                        <%= db[i].desc %>
+                        <%= col[i].assign %>
+                    </td>
+                    <td>
+                        <%= col[i].due %>
+                    </td>
+                    <td>
+                        <%= col[i].status %>
+                    </td>
+                    <td>
+                        <%= col[i].desc %>
                     </td>
                 </tr>
             <% } %>

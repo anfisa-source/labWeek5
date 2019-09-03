@@ -18,9 +18,13 @@
     <form method="POST" action="/addNewTask">
       <label for="Name">Name:</label>
       <input type="text" name="name" />
+      <label for="assign">Assign to:</label>
+      <input type="text" name="assign" />
       <label for="due">Task due:</label>
-      <input type="text" name="due" />
-      <label for="email">Description:</label>
+      <input type="date" name="due" />
+      <label for="status">Status:</label>
+      <input type="text" name="status" />
+      <label for="desc">Description:</label>
       <input type="desc" name="desc" />
       <button type="submit">Submit</button>
     </form>
