@@ -2,6 +2,7 @@ let express = require('express');
 let app = express();
 let bodyParser=require("body-parser");
 let ejs =require("ejs");
+var dateFormat = require('dateformat');
 
 //db = new Array();
 let mongodb = require('mongodb');
@@ -89,5 +90,14 @@ app.post("/updatestatustask", function (req,res){
     col.updateOne(filter, {$set: {status : newDetail.status}});
     res.redirect('/listTasks');
 })
+
+app.get('/deleteOldComplete', function(req,res){
+
+    
+    let filter = {status: "Complete", due: {$lt:"2019-09-03"}};
+    col.deleteMany(filter, function(err,obj){
+    });
+    res.redirect('/listTasks');
+});
 
 app.listen(8080);
