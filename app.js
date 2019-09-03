@@ -2,7 +2,7 @@ let express = require('express');
 let app = express();
 let bodyParser=require("body-parser");
 let ejs =require("ejs");
-var dateFormat = require('dateformat');
+
 
 //db = new Array();
 let mongodb = require('mongodb');
