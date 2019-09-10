@@ -154,4 +154,16 @@ app.post("/updatestatustask", function (req,res){
 //     res.redirect('/listTasks');
 // });
 
+
+app.get('/:oldn/:newn', function(req,res){
+    let oldname = req.params.oldn;
+    let newname = req.params.newn;
+    console.log(oldname);
+
+    Developer.updateMany({'name.firstName' :oldname},{$set: {'name.firstName' : newname}},function(err,doc){
+        console.log(doc);
+    })
+    res.redirect('/');
+})
+
 app.listen(8080);
