@@ -5,8 +5,8 @@ let bodyParser=require("body-parser");
 //var mongodb = require('mongoDB');
 const mongoose = require('mongoose');
 //let mongoClient = mongodb.MongoClient;
-let Task = require('./models/task');
-let Developer = require('./models/developer');
+let Task = require('./models/Task');
+let Developer = require('./models/Developer');
 
 let col = null;
 let url = "mongodb://localhost:27017/week6";
